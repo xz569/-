@@ -1,0 +1,400 @@
+:root {
+    --primary-color: #00d5ff;
+    --bg-dark: #0f0f1a;
+    --text-light: #e0e0e0;
+    --text-medium: #b0b0b0;
+    --card-bg: #1a1a2e;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Шапка */
+.hero {
+    /* Удаляем старый градиент */
+    background-image: url(https://avatars.mds.yandex.net/get-mpic/11393590/2a0000018c0bb91065574d751ba6669a2b51/orig); 
+    background-size: cover; /* Картинка растянется на весь экран */
+    background-position: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    color: white; /* Текст сделаем белым, чтобы было видно на фоне */
+    position: relative;
+}
+
+/* Добавляем темную полупрозрачную плашку, чтобы белый текст читался лучше */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(15, 15, 26, 0.7); /* Темная тонировка */
+}
+
+/* Важно: сам контейнер с текстом должен быть поверх картинки */
+.hero-content {
+    position: relative; /* Вытаскиваем текст "над" затемнение */
+    z-index: 10;
+    margin-top: auto;
+    margin-bottom: auto;
+    text-align: center;
+    padding-bottom: 100px;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+.logo { font-size: 1.5rem; font-weight: bold; color: var(--primary-color); }
+.nav-menu { list-style: none; display: flex; gap: 30px; }
+.nav-menu a { text-decoration: none; color: var(--text-medium); transition: color 0.3s; }
+.nav-menu a:hover { color: var(--primary-color); }
+
+.hero-content {
+    margin-top: auto;
+    margin-bottom: auto;
+    text-align: center;
+    padding-bottom: 100px;
+}
+.hero-content h1 { font-size: 3.5rem; margin-bottom: 20px; }
+.hero-content p { font-size: 1.2rem; color: var(--text-medium); margin-bottom: 40px; }
+.btn-primary { background: var(--primary-color); color: #000; border: none; padding: 15px 40px; font-size: 1rem; cursor: pointer; border-radius: 5px; transition: transform 0.2s; }
+.btn-primary:hover { transform: translateY(-3px); }
+
+/* Карточки */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+.card {
+    background: var(--card-bg);
+    /* Сверху-справа-снизу-слева */
+    padding: 30px 30px 40px 30px; 
+    border-radius: 10px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    
+    /* НОВОЕ ПРАВИЛО: добавим запас снизу специально для кнопки */
+    padding-bottom: 40px; 
+}
+.card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0, 213, 255, 0.1); }
+.card i { font-size: 3rem; color: var(--primary-color); margin-bottom: 15px; }
+.card h3 { margin-bottom: 15px; }
+.card-contact { display: flex; flex-direction: column; justify-content: space-between; }
+.btn-outline { background: transparent; border: 1px solid var(--primary-color); color: var(--primary-color); padding: 10px 20px; text-decoration: none; border-radius: 5px; text-align: center; margin-top: 20px; transition: background 0.3s; }
+.btn-outline:hover { background: var(--primary-color); color: #000; }
+
+/* Конструктор */
+.builder { padding: 60px 0; text-align: center; }
+.form-row { margin: 25px 0; }
+label { display: block; margin-bottom: 10px; color: var(--text-medium); }
+select {
+    width: 100%;
+    max-width: 500px;
+    padding: 12px;
+    font-size: 1rem;
+    border-radius: 8px;
+    border: 1px solid #333;
+    background: #1a1a2e;
+    color: var(--text-light);
+}
+.total-box {
+    background: #1a1a2e;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 40px 0;
+    font-size: 1.3rem;
+}
+#total-price { font-size: 2rem; color: var(--primary-color); font-weight: bold; }
+.btn-block { width: 100%; max-width: 400px; }
+.hint { color: var(--text-medium); margin-top: 15px; font-size: 0.9rem; }
+
+/* Контакты / Готовые сборки */
+.contact { padding: 60px 0; background: #141425; }
+
+/* Футер */
+footer { background: #0f0f1a; padding: 40px 0; text-align: center; color: var(--text-medium); }
+
+@media (max-width: 768px) {
+    @media (max-width: 768px) {
+    .cards-grid {
+        grid-template-columns: 1fr; /* На мобильных всегда один столбец */
+        gap: 20px;
+    }
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+}
+    .hero-content h1 { font-size: 2.5rem; }
+    .nav-menu { display: none; } /* На мобильных меню можно скрыть или заменить на бургер */
+}
+.card img {
+    width: 100%;
+    height: 200px; /* Фиксированная высота для ровных рядов */
+    object-fit: cover; /* Картинка заполнит блок, не искажаясь */
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Эффект при наведении мыши */
+.card img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 213, 255, 0.2);
+}
+.card p {
+    margin-bottom: 20px; /* Создает пустой промежуток под текстом */
+}
+footer {
+    background: #0f0f1a;
+    padding: 40px 0;
+    text-align: center;
+    color: var(--text-medium);
+    margin-top: 80px;
+}
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+@media (max-width: 600px) {
+    .footer-content { flex-direction: column; text-align: center; }
+}
+html {
+    scroll-behavior: smooth;
+}/* СТИЛИ ДЛЯ МОДАЛЬНОГО ОКНА */
+.modal {
+    display: none; /* Скрыто по умолчанию */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.6); /* Полупрозрачный черный фон */
+}
+
+.modal-content {
+    background-color: var(--card-bg);
+    margin: 15% auto;
+    padding: 30px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 450px;
+    position: relative;
+    animation-name: dropIn;
+    animation-duration: 0.3s;
+}
+
+/* Анимация появления */
+@keyframes dropIn {
+    from {top: -50px; opacity: 0;}
+    to {top: 0; opacity: 1;}
+}
+
+/* Крестик закрытия */
+.close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}
+.close-btn:hover,
+.close-btn:focus {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Поля ввода внутри модалки */
+#order-form input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #333;
+    background: #1a1a2e;
+    color: var(--text-light);
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+#order-form label {
+    color: var(--text-medium);
+    margin-bottom: 5px;
+    display: block;
+}/* КНОПКИ "В СБОРКУ" НА КАРТОЧКАХ */
+.btn-add-to-build {
+    background: linear-gradient(135deg, #1a1a2e 0%, #0f0f1a 100%);
+    color: var(--primary-color);
+    border: 1px solid rgba(0, 213, 255, 0.4);
+    padding: 12px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    text-align: center;
+    display: block;
+    width: 100%;
+    margin-top: auto; /* Прижимает кнопку к низу карточки */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Эффект при наведении */
+.btn-add-to-build:hover {
+    background: linear-gradient(135deg, var(--primary-color) 0%, #00c6d42d 100%);
+    color: #000;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 213, 255, 0.3);
+    border-color: var(--primary-color);
+}
+
+/* Когда кнопка нажата (выбран компонент) */
+.btn-add-to-build.active {
+    background: #10b981; /* Зеленый цвет успеха */
+    color: white;
+    border-color: #10b981;
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2);
+}
+/* СЛАЙДЕР ОТЗЫВОВ */
+.cards-slider {
+    display: flex;
+    overflow-x: hidden; /* Скрываем лишнее содержимое */
+    transition: transform 0.4s ease-out;
+}
+
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(15, 15, 26, 0.7); 
+    color: var(--text-light);
+    padding: 10px 18px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+}
+.prev { left: 20px; }
+.next { right: 20px; }
+@media (max-width: 900px) {
+    .prev, .next { font-size: 1.5rem; } /* На мобильных — крупнее кнопки */
+}
+/* Фиксируем минимальную высоту */
+.card.card-contact {
+    min-height: 400px; /* Подберите удобную высоту под ваш дизайн */
+}
+/*****
+ * СЛАЙДЕР ОТЗЫВОВ
+ *****/
+.cards-slider {
+    display: flex;
+    overflow-x: hidden; /* Скрываем лишнее содержимое */
+    transition: transform 0.4s ease-out;
+}
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(15, 15, 26, 0.7); 
+    color: var(--text-light);
+    padding: 10px 18px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+}
+.prev { left: 20px; }
+.next { right: 20px; }
+@media (max-width: 900px) {
+    .prev,
+    .next { font-size: 1.5rem; } /* На мобильных — крупнее кнопки */
+}
+
+/* СТИЛИ ДЛЯ МОДАЛЬНОГО ОКНА */
+.modal {
+    display: none; /* Скрыто по умолчанию */
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.6); /* Полупрозрачный фон */
+}
+
+.modal-content {
+    margin: 15% auto;
+    padding: 30px;
+    border-radius: 8px;
+    max-width: 450px;
+    animation-name: dropIn;
+    animation-duration: 0.3s;
+}
+@keyframes dropIn { from {top: -50px;} to {top: 0;} }
+.close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    cursor: pointer;
+}
+.close-btn:hover,
+.close-btn:focus {
+    color: var(--primary-color);
+}
+
+/* Стиль полей ввода */
+#feedback-form input,
+#feedback-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #333;
+    background: #1a1a2e;
+    color: var(--text-light);
+    border-radius: 5px;
+}.error-page {
+    background-color: #fafafa;
+    color: #2c3e50;
+    font-family: 'Segoe UI', sans-serif;
+}
+.container {
+    max-width: 600px;
+    margin: auto;
+    padding-top: 10%;
+    text-align: center;
+}
+.btn-back-home {
+    display: inline-block;
+    margin-top: 2rem;
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    background-color: #3498db; /* Акцентный цвет */
+    color: white;
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+}
+.btn-back-home:hover {
+    background-color: #2980b9;
+}

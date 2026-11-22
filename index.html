@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <meta charset="UTF-8">
+    <title>Сборка игрового ПК</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="hero">
+        <nav class="container nav-container">
+            <div class="logo">GamePC Master</div>
+        </nav>
+        <div class="container hero-content">
+            <h1>Собери свой идеальный игровой компьютер</h1>
+            <p>Подбор проверенных компонентов под любой бюджет.</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section id="build" class="builder">
+    <h2>Онлайн-конфигуратор</h2>
+    <p>Выберите компоненты, чтобы рассчитать стоимость:</p>
+
+    <!-- Процессор -->
+    <div class="form-row">
+        <label for="cpu-select">Процессор:</label>
+        <select id="cpu-select">
+            <optgroup label="💰 Бюджетные">
+    <option value="1" data-price="18000">Intel Core i3-12100F — 18 000 ₽</option>
+    <option value="2" data-price="22000">AMD Ryzen 5 5600 — 22 000 ₽</option>
+</optgroup>
+<optgroup label="⚡ Оптимальные">
+    <option value="3" data-price="28000">Intel Core i5-13400F — 28 000 ₽</option>
+    <option value="4" data-price="30000">AMD Ryzen 5 7500F — 30 000 ₽</option>
+    <option value="5" data-price="35000">Intel Core i5-13600KF — 35 000 ₽</option>
+</optgroup>
+<optgroup label="🏆 Топовые">
+    <option value="6" data-price="42000">Intel Core i7-14700K — 42 000 ₽</option>
+    <option value="7" data-price="38000">AMD Ryzen 7 7800X3D — 38 000 ₽</option>
+    <option value="8" data-price="60000">Intel Core i9-14900K — 60 000 ₽</option>
+</optgroup>
+</select>
+    </div>
+
+    <!-- Материнская плата -->
+    <div class="form-row">
+        <label for="mobo-select">Материнская плата:</label>
+        <select id="mobo-select">
+            <optgroup label="💰 Бюджетные">
+    <option value="1" data-price="8000">H610M (DDR4) — 8 000 ₽</option>
+    <option value="2" data-price="9000">A620M (DDR5) — 9 000 ₽</option>
+</optgroup>
+<optgroup label="⚡ Оптимальные">
+    <option value="3" data-price="13000">B760M (DDR4) — 13 000 ₽</option>
+    <option value="4" data-price="15000">B650 (DDR5) — 15 000 ₽</option>
+    <option value="5" data-price="18000">Z790 (DDR4) — 18 000 ₽</option>
+</optgroup>
+<optgroup label="🏆 Топовые">
+    <option value="6" data-price="25000">Z790 (DDR5) WiFi — 25 000 ₽</option>
+    <option value="7" data-price="30000">X670E (PCIe 5.0) — 30 000 ₽</option>
+</optgroup>
+        </select>
+    </div>
+
+    <!-- Оперативная память -->
+    <div class="form-row">
+        <label for="ram-select">Оперативная память (RAM):</label>
+        <select id="ram-select">
+           <optgroup label="💰 16 GB (Базово)">
+    <option value="1" data-price="4500">16GB DDR4 3200MHz — 4 500 ₽</option>
+    <option value="2" data-price="5500">16GB DDR5 5600MHz — 5 500 ₽</option>
+</optgroup>
+<optgroup label="⚡ 32 ГБ (Игровой стандарт)">
+    <option value="3" data-price="8000">32GB DDR4 3600MHz CL16 — 8 000 ₽</option>
+    <option value="4" data-price="9500">32GB DDR5 6000MHz CL32 — 9 500 ₽</option>
+</optgroup>
+<optgroup label="🏆 32+ ГБ (Флагман)">
+    <option value="5" data-price="12000">32GB DDR5 6400MHz RGB — 12 000 ₽</option>
+    <option value="6" data-price="15000">64GB DDR5 6000MHz — 15 000 ₽</option>
+</optgroup>
+        </select>
+    </div>
+
+    <!-- Кулер -->
+    <div class="form-row">
+        <label for="cooler-select">Охлаждение CPU:</label>
+        <select id="cooler-select">
+           <optgroup label="💰 Башни (До 150W)">
+    <option value="1" data-price="2000">ID-Cooling SE-214 / DeepCool AG400 — 2 000 ₽</option>
+    <option value="2" data-price="3000">DeepCool AK400 / ID-Cooling SE-226 — 3 000 ₽</option>
+</optgroup>
+<optgroup label="⚡ Средний сегмент (До 220W)">
+    <option value="3" data-price="4500">Thermalright Phantom Spirit 120 — 4 500 ₽</option>
+    <option value="4" data-price="5000">DeepCool LT520 (СЖО 240мм) — 5 000 ₽</option>
+</optgroup>
+<optgroup label="🏆 Тихие/Топовые">
+    <option value="5" data-price="6500">DeepCool LT720 (СЖО 360мм) — 6 500 ₽</option>
+    <option value="6" data-price="8000">Noctua NH-D15 Chromax — 8 000 ₽</option>
+</optgroup>
+        </select>
+    </div>
+
+    <!-- Корпус -->
+    <div class="form-row">
+        <label for="case-select">Корпус:</label>
+        <select id="case-select">
+           <optgroup label="💰 Компакт/MicroATX">
+    <option value="1" data-price="3500">Powercase Mystic Micro ATX — 3 500 ₽</option>
+    <option value="2" data-price="4000">Cougar Duobox — 4 000 ₽</option>
+</optgroup>
+<optgroup label="⚡ Mid-Tower (Стандарт)">
+    <option value="3" data-price="5500">Montech AIR 903 BASE — 5 500 ₽</option>
+    <option value="4" data-price="6500">NZXT H5 Flow — 6 500 ₽</option>
+    <option value="5" data-price="7000">Lian Li LANCOOL 216 — 7 000 ₽</option>
+</optgroup>
+<optgroup label="🏆 Премиум/дизайн">
+    <option value="6" data-price="9000">Corsair 5000D Airflow — 9 000 ₽</option>
+    <option value="7" data-price="12000">Lian Li O11 Dynamic EVO — 12 000 ₽</option>
+</optgroup>
+        </select>
+    </div>
+
+    <!-- Видеокарта оставляем как было -->
+    <div class="form-row">
+        <label for="gpu-select">Видеокарта:</label>
+        <select id="gpu-select">
+            <optgroup label="💰 Бюджетные (1080p)">
+    <option value="1" data-price="35000">NVIDIA RTX 3060 12GB — 35 000 ₽</option>
+    <option value="2" data-price="32000">AMD RX 6600 XT — 32 000 ₽</option>
+    <option value="3" data-price="40000">NVIDIA RTX 4060 — 40 000 ₽</option>
+</optgroup>
+<optgroup label="⚡ Оптимальные (1440p)">
+    <option value="4" data-price="65000">NVIDIA RTX 4060 Ti — 65 000 ₽</option>
+    <option value="5" data-price="70000">AMD RX 7700 XT — 70 000 ₽</option>
+    <option value="6" data-price="75000">NVIDIA RTX 4070 Super — 75 000 ₽</option>
+</optgroup>
+<optgroup label="🏆 Топовые (4K)">
+    <option value="7" data-price="95000">NVIDIA RTX 4070 Ti Super — 95 000 ₽</option>
+    <option value="8" data-price="110000">NVIDIA RTX 4080 Super — 110 000 ₽</option>
+    <option value="9" data-price="180000">NVIDIA RTX 4090 — 180 000 ₽</option>
+</optgroup>
+        </select>
+    </div>
+                <!-- Блок питания -->
+            <div class="form-row">
+                <label for="psu-select">Блок питания:</label>
+                <select id="psu-select">
+                   <optgroup label="💰 До 600W">
+    <option value="1" data-price="3500">DeepCool PF550 (550W) — 3 500 ₽</option>
+    <option value="2" data-price="4500">Chieftec Proton BDF-600S (600W) — 4 500 ₽</option>
+</optgroup>
+<optgroup label="⚡ Оптимальные (Gold)">
+    <option value="3" data-price="6000">ADATA XPG CORE REACTOR II 650W — 6 000 ₽</option>
+    <option value="4" data-price="7500">Cooler Master MWE Gold V2 750W — 7 500 ₽</option>
+    <option value="5" data-price="8500">DEEPCOOL PQ750M (750W) — 8 500 ₽</option>
+</optgroup>
+<optgroup label="🏆 Флагманы">
+    <option value="6" data-price="11000">Seasonic FOCUS GM 850W — 11 000 ₽</option>
+    <option value="7" data-price="14000">Corsair RM850e SHIFT — 14 000 ₽</option>
+</optgroup>
+                    <option value="2" data-price="7000">850W Gold — 7 000 ₽</option>
+                </select>
+            </div>
+
+                 <!-- Накопитель (SSD) -->
+            <div class="form-row">
+                <label for="ssd-select">Накопитель SSD:</label>
+                <select id="ssd-select">
+                    <optgroup label="💰 Boot SSD (Система)">
+    <option value="1" data-price="3000">Netac NV3000 512GB — 3 000 ₽</option>
+    <option value="2" data-price="4000">ADATA Legend 800 1TB — 4 000 ₽</option>
+</optgroup>
+<optgroup label="⚡ Игровые Gen3/Gen4">
+    <option value="3" data-price="5500">Kingston NV2 1TB — 5 500 ₽</option>
+    <option value="4" data-price="6500">Samsung 980 1TB — 6 500 ₽</option>
+    <option value="5" data-price="8000">GOODRAM PX500 2TB — 8 000 ₽</option>
+</optgroup>
+<optgroup label="🏆 Скорость (Top PCIe 4.0)">
+    <option value="6" data-price="9000">ADATA XPG GAMMIX S70 Blade 1TB — 9 000 ₽</option>
+    <option value="7" data-price="11000">Samsung 980 Pro 1TB — 11 000 ₽</option>
+    <option value="8" data-price="16000">Samsung 990 Pro 2TB — 16 000 ₽</option>
+</optgroup>
+                </select>
+            </div>
+
+    <div class="total-box">
+        <strong>Итоговая стоимость сборки:</strong>
+        <span id="total-price">0 ₽</span>
+    </div>
+            <!-- Секция Отзывы -->
+   <section id="reviews" class="contact" style="position: relative; padding-top: 80px; padding-bottom: 80px; background: #0f0f1a;">
+    <h2 style="color: white; text-align: center;">Отзывы наших клиентов</h2>
+    <p style="text-align: center; color: var(--text-medium); margin-bottom: 60px;">Не верьте нам на слово. Вот что говорят те, кто уже играет на наших сборках.</p>
+
+    <!-- Стрелка "Назад". Она должна быть здесь -->
+    <button class="slider-btn prev">◄</button> 
+    
+    <!-- Контейнер для карточек -->
+    <div class="cards-slider">
+        <!-- Отзыв 1 -->
+        <article class="card card-contact">
+            <div><h3>Александр К.</h3>
+                <p style="font-style: italic;">Сборка «Оптимальная»</p>
+                <p>"Компьютер пришел вовремя... Очень доволен!" ⭐⭐⭐⭐⭐</p></div>
+            <div>
+                <img src="https://img.magnific.com/premium-photo/portrait-young-handsome-guy_93995-4075.jpg" alt="Аватар">
+                <strong>Геймер, стаж 5 лет</strong>
+            </div>
+        </article>
+        
+        <!-- Добавьте ещё отзывы сюда -->
+        <article class="card card-contact">
+            <div><h3>Марина В.</h3>
+                <p style="font-style: italic;">Сборка «Стартовая»</p>
+                <p>"Я ничего не понимаю в железе... Спасибо за терпение к новичкам!" ⭐⭐⭐⭐⭐</p></div>
+            <div>
+                <img src="https://img.magnific.com/free-photo/beautiful-woman-standing-looking-room-back-view-black-white_176474-7197.jpg?semt=ais_hybrid&w=740&q=80" alt="Аватар">
+                <strong>Любитель MMO</strong>
+            </div>
+        </article>
+
+        <article class="card card-contact">
+            <div><h3>Дмитрий S.</h3>
+                <p style="font-style: italic;">Сборка «Премиум»</p>
+                <p>"Мощь! Заказывал для работы с графикой и 4K гейминга... Сервис на высоте." ⭐⭐⭐⭐⭐</p></div>
+            <div>
+                <img src="https://i.pinimg.com/originals/36/e8/aa/36e8aa4e85c940d3124eeb64336a0c52.jpg?nii=t" alt="Аватар">
+                <strong>Дизайнер / Стример</strong>
+            </div>
+        </article>
+
+        <!-- Новые отзывы -->
+        <article class="card card-contact">
+            <div><h3>Алексей П.</h3>
+                <p style="font-style: italic;">Сборка «Топовая»</p>
+                <p>"Собрал ПК под VR-шлем HTC Vive Pro. Всё работает идеально, никаких лагов!" ⭐⭐⭐⭐⭐</p></div>
+            <div>
+                <img src="https://photo4.wambacdn.net/56/29/84/1812489265/2185345995_huge.jpg?hash=-TpAo-kUkoumR_qctYmhLw&expires=64060578000&updated=1712794695" alt="Аватар">
+                <strong>VR-геймер</strong>
+            </div>
+        </article>
+
+        <article class="card card-contact">
+            <div><h3>Елена Н.</h3>
+                <p style="font-style: italic;">Сборка «Игровой стандарт»</p>
+                <p>"Заказала мужу на день рождения. Он был в восторге от производительности и тишины системы." ⭐⭐⭐⭐⭐</p></div>
+            <div>
+                <img src="https://i.pinimg.com/originals/9d/cd/1e/9dcd1e946d9bff7302f1d316f59d2d9d.jpg" alt="Аватар">
+                <strong>Подарившая радость</strong>
+            </div>
+        </article>
+
+    </div>
+
+    <!-- Стрелка "Вперед". Она тоже должна быть здесь -->
+    <button class="slider-btn next">►</button>
+
+</section>
+            </div>
+        </section>
+
+    <button class="btn-primary btn-block" disabled id="order-btn">Оформить заказ</button>
+    <p class="hint" id="hint-text">Заполните все поля, чтобы активировать кнопку.</p>
+        <section id="components" class="features">
+                    <!-- Секция готовых сборок -->
+        <section id="prebuilt-pcs" class="features" style="padding-top: 80px;">
+            <h2>Готовые сборки под ключ</h2>
+            <p>Не хотите собирать сами? Выберите проверенную конфигурацию от наших инженеров.</p>
+            
+            <div class="cards-grid" style="gap: 30px; margin-top: 40px;">
+                
+                <!-- Сборка 1: Бюджетная -->
+                <article class="card card-contact" style="background: #1a1a2e; min-height: 350px; display: flex; flex-direction: column; justify-content: space-between; text-align: left;">
+                    <div>
+                        <h3 style="margin-bottom: 10px;">🎮 Стартовая (FullHD)</h3>
+                        <p><strong>Для:</strong> CS2, Dota 2, WoW на высоких настройках.</p>
+                        <ul style="color: var(--text-medium); font-size: 0.9rem; padding-left: 20px; line-height: 1.6;">
+                            <li>Core i3-12100F</li>
+                            <li>RTX 3060 12GB</li>
+                            <li>16GB DDR4</li>
+                            <li>SSD 512GB</li>
+                        </ul>
+                        <h4 style="color: #10b981; margin-top: 15px;">Цена: 75 000 ₽</h4>
+                    </div>
+                    <button class="btn-primary btn-block load-preset-btn" data-id="budget">Загрузить эту сборку</button>
+                </article>
+
+                <!-- Сборка 2: Оптимальная -->
+                <article class="card card-contact" style="background: #1a1a2e; min-height: 350px; display: flex; flex-direction: column; justify-content: space-between; text-align: left;">
+                    <div>
+                        <h3 style="margin-bottom: 10px;">⚡ Оптимальная (QuadHD)</h3>
+                        <p><strong>Для:</strong> Cyberpunk, Alan Wake 2, современные хиты.</p>
+                        <ul style="color: var(--text-medium); font-size: 0.9rem; padding-left: 20px; line-height: 1.6;">
+                            <li>Ryzen 5 7600</li>
+                            <li>RX 7700 XT / RTX 4070 Super</li>
+                            <li>32GB DDR5</li>
+                            <li>SSD 1TB NVMe</li>
+                        </ul>
+                        <h4 style="color: #10b981; margin-top: 15px;">Цена: 140 000 ₽</h4>
+                    </div>
+                    <button class="btn-primary btn-block load-preset-btn" data-id="optimal">Загрузить эту сборку</button>
+                </article>
+
+                <!-- Сборка 3: Премиум -->
+                <article class="card card-contact" style="background: #1a1a2e; min-height: 350px; display: flex; flex-direction: column; justify-content: space-between; text-align: left;">
+                    <div>
+                        <h3 style="margin-bottom: 10px;">🏆 Премиум (4K ULTRA)</h3>
+                        <p><strong>Для:</strong> Виртуальной реальности и стриминга.</p>
+                        <ul style="color: var(--text-medium); font-size: 0.9rem; padding-left: 20px; line-height: 1.6;">
+                            <li>Core i7-14700K</li>
+                            <li>RTX 4080 Super</li>
+                            <li>32GB+ DDR5 6000MHz</li>
+                            <li>SSD 2TB Gen4</li>
+                        </ul>
+                        <h4 style="color: #10b981; margin-top: 15px;">Цена: 250 000 ₽</h4>
+                    </div>
+                    <button class="btn-primary btn-block load-preset-btn" data-id="premium">Загрузить эту сборку</button>
+                </article>
+
+            </div>
+        </section>
+            <h2>Основные комплектующие</h2>
+            <p>Выберите компоненты, чтобы добавить их в конфигуратор:</p>
+            <div class="cards-grid">
+                <!-- Процессоры -->
+                <article class="card">
+                    <img src="https://avatars.mds.yandex.net/i?id=dc99e4ad74e92c45e37ab37cc62a02d3d1acdc9b-4872026-images-thumbs&n=13" alt="Процессор" style="width: 100%; border-radius: 8px; margin-bottom: 15px; object-fit: cover; height: 180px;">
+                    <h3>Процессоры</h3>
+                    <p>От Intel Core i5 до Ryzen 9.</p>
+                    <button class="btn-add-to-build btn-block" data-target="cpu-select" data-value="3">Выбрать i5-13400F</button>
+                </article>
+
+                <!-- Видеокарты -->
+                <article class="card">
+                    <img src="https://i.pinimg.com/originals/37/59/6b/37596bcf5478678b8b0cabc79230460a.jpg?nii=t" alt="Видеокарта" style="width: 100%; border-radius: 8px; margin-bottom: 15px; object-fit: cover; height: 180px;">
+                    <h3>Видеокарты</h3>
+                    <p>NVIDIA RTX и AMD Radeon.</p>
+                    <button class="btn-add-to-build btn-block" data-target="gpu-select" data-value="6">Выбрать RTX 4070 Super</button>
+                </article>
+
+                <!-- Материнские платы -->
+                <article class="card">
+                    <img src="https://i.pinimg.com/originals/2c/60/7b/2c607b186e80d33f8568888da1f3b9b3.jpg" alt="МП" style="width: 100%; border-radius: 8px; margin-bottom: 15px; object-fit: cover; height: 180px;">
+                    <h3>Материнские платы</h3>
+                    <p>Чипсеты B760, Z790, X670.</p>
+                    <button class="btn-add-to-build btn-block" data-target="mobo-select" data-value="4">Выбрать B650</button>
+                </article>
+
+                <!-- Оперативная память -->
+                <article class="card">
+                    <img src="https://occlub.ru/wp-content/uploads/2018/10/gigabyte-memory-2666mhz-1.jpg" alt="RAM" style="width: 100%; border-radius: 8px; margin-bottom: 15px; object-fit: cover; height: 180px;">
+                    <h3>Оперативная память</h3>
+                    <p>DDR4 и DDR5 от 16GB до 64GB.</p>
+                    <button class="btn-add-to-build btn-block" data-target="ram-select" data-value="4">Выбрать 32GB DDR5</button>
+                </article>
+
+                <!-- Охлаждение -->
+                <article class="card">
+                    <img src="https://avatars.mds.yandex.net/get-mpic/12222014/2a0000018c6ce03a8afe55be441b5d427985/orig" alt="Cooler" style="width: 100%; border-radius: 8px; margin-bottom: 15px; object-fit: cover; height: 180px;">
+                    <h3>Охлаждение CPU</h3>
+                    <p>Воздух и СЖО 240/360 мм.</p>
+                    <button class="btn-add-to-build btn-block" data-target="cooler-select" data-value="4">Выбрать DeepCool LT520</button>
+                </article>
+
+                <!-- Корпуса -->
+                <article class="card">
+                    <img src="https://i.pinimg.com/736x/2a/5c/8d/2a5c8dfac76b280fcb74d2ebd1fa2c86.jpg" alt="Case" style="width: 100%; border-radius: 8px; margin-bottom: 15px; object-fit: cover; height: 180px;">
+                    <h3>Корпуса</h3>
+                    <p>Mid-Tower и Full-Tower.</p>
+                    <button class="btn-add-to-build btn-block" data-target="case-select" data-value="5">Выбрать Lian Li 216</button>
+                </article>
+
+                <!-- Блоки питания -->
+                <article class="card">
+                    <img src="https://avatars.mds.yandex.net/i?id=81e2049d607a159ddf9710c36b897b03_l-5318461-images-thumbs&n=13" alt="PSU" style="width: 100%; border-radius: 8px; margin-bottom: 15px; object-fit: cover; height: 180px;">
+                    <h3>Блоки питания</h3>
+                    <p>Сертификаты Bronze и Gold.</p>
+                    <button class="btn-add-to-build btn-block" data-target="psu-select" data-value="4">Выбрать Cooler Master 750W</button>
+                </article>
+
+                <!-- SSD Накопители -->
+                <article class="card">
+                    <img src="https://e2.by/imagesaver/product/big/i_idu48cooa58oucd4daed_1768668365.jpg" alt="SSD" style="width: 100%; border-radius: 8px; margin-bottom: 15px; object-fit: cover; height: 180px;">
+                    <h3>SSD Накопители</h3>
+                    <p>Gen3 и Gen4 NVMe.</p>
+                    <button class="btn-add-to-build btn-block" data-target="ssd-select" data-value="4">Выбрать Samsung 980 1TB</button>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <!-- Скрипт должен быть в самом конце -->
+    <script src="script.js"></script>
+    <footer>
+    <div class="container footer-content">
+        <div><h4>GamePC Master</h4></div>
+        <div>+7 (915) 229-54-62<br>Ежедневно 10:00–22:00</div>
+        <div>
+            <a href="#build" style="color: var(--primary-color);">Собрать ПК</a><br>
+            <a href="#ready-builds" style="color: var(--primary-color);">Готовые решения</a>
+            <a href="#" id="feedback-btn" class="btn-outline">Оставить отзыв о сайте</a>
+        </div>
+    </div>
+</footer>
+<!-- МОДАЛЬНОЕ ОКНО ЗАКАЗА -->
+<div id="order-modal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <h2>Оформление заказа</h2>
+        
+        <!-- Сюда позже можно подключить Telegram-бота или PHP-обработчик -->
+        <form id="order-form">
+            <div class="form-row">
+                <label for="client-name">Ваше Имя:</label>
+                <input type="text" id="client-name" placeholder="Иван Иванов" required>
+            </div>
+            
+            <div class="form-row">
+                <label for="client-phone">Телефон:</label>
+                <input type="tel" id="client-phone" placeholder="+7 (999) 000-00-00" required>
+            </div>
+
+            <p><strong>Итоговая стоимость: <span id="modal-total-price"></span></strong></p>
+
+            <button type="submit" class="btn-primary btn-block">Отправить заявку менеджеру</button>
+        </form>
+    </div>
+</div>
+<!-- МОДАЛЬНОЕ ОКНО ОБРАТНОЙ СВЯЗИ -->
+<div id="feedback-modal" class="modal">
+    <div class="modal-content">
+        <!-- Крестик закрытия -->
+        <span class="close-btn">&times;</span>
+        
+        <h2>Оставьте свой отзыв о сайте!</h2>
+        <p>Нам важно ваше мнение, чтобы сделать сайт лучше.</p>
+
+        <!-- Форма -->
+        <form id="feedback-form">
+            <label for="name">Ваше имя:</label>
+            <input type="text" id="name" placeholder="Иван Иванов" required>
+            
+            <label for="email">Email или телефон (по желанию):</label>
+            <input type="email" id="email" placeholder="ivan@mail.ru">
+
+            <label for="message">Текст отзыва:</label>
+            <textarea id="message" rows="4" placeholder="Что вам понравилось? Что можно улучшить?" required></textarea>
+<a href="#" id="feedback-btn" class="btn-outline">Оставить отзыв о сайте</a>
+            <button type="submit" class="btn-primary btn-block">Отправить</button>
+        </form>
+    </div>
+</div>
+
+</body>
+
+</html>
